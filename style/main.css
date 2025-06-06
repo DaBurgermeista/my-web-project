@@ -1,0 +1,118 @@
+html, body {
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+
+body {
+  margin: 0;
+  background-color: black;
+  color: #00ffcc;
+  font-family: monospace;
+}
+#game-wrapper {
+  display: inline-block;
+  border: 2px solid #00ffcc;
+  padding: 0.5rem;
+  margin: 1rem;
+  overflow: none;
+}
+
+#game-title {
+  text-align: center;
+  font-family: monospace;
+  color: #00ffcc;
+  margin-bottom: 0.25rem;
+  font-size: 1rem;
+}
+
+#game {
+  padding: 1rem;
+}
+canvas {
+  display: block;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+#sidebar {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 300px;
+  height: 95vh;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(0, 255, 204, 0.05);
+  border-left: 1px solid #00ffcc;
+  border-bottom: 1px solid #00ffcc;
+  overflow: hidden; 
+  overflow-anchor: none;
+}
+
+#hud {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+}
+
+
+#ui {
+  flex-shrink: 0;
+  padding: 1rem;
+  border-bottom: 1px solid #00ffcc;
+  font-family: monospace;
+  color: #00ffcc;
+  font-size: 0.9rem;
+  background-color: rgba(0, 255, 204, 0.1);
+}
+
+#log {
+  flex-grow: 1;
+  height: 100%;               /* ✅ forces it to fill sidebar */
+  overflow-y: auto;
+  max-height: 100%;           /* ✅ ensures scrollable cap */
+  padding: 0.75rem 1rem;
+  font-family: monospace;
+  font-size: 0.8rem;
+  scrollbar-width: none;
+}
+
+
+#log::-webkit-scrollbar {
+  display: none; /* Chrome */
+}
+
+#log p {
+  margin: 0;
+  padding: 0.25rem 0;
+  line-height: 1.2;
+  word-break: break-word;
+}
+
+#log p:last-child {
+  margin-bottom: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+/* Message TYPES for the LOG */
+.log-system {
+  color: #00ffee;
+}
+
+.log-combat {
+  color: #ff4d4d;
+}
+
+.log-lore {
+  color: #ffffaa;
+  font-style: italic;
+}
+
+.log-loot {
+  color: #90ee90;
+}
+/* END OF MESSAGE TYPES */
